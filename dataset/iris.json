@@ -1,0 +1,38 @@
+{
+	"name": "iris",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "iris_blob_storage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "iris.csv",
+				"container": "bootdiagnostics-openvpnac-787e29c2-086c-4a3a-8d55-ec40988dc281"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}

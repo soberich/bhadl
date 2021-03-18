@@ -1,0 +1,39 @@
+{
+	"name": "dfl-bhadl-main",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "iris",
+						"type": "DatasetReference"
+					},
+					"name": "Iris"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "iris_target",
+						"type": "DatasetReference"
+					},
+					"name": "sepalsWithLengthGt55"
+				},
+				{
+					"dataset": {
+						"referenceName": "iris_target_5_5_above",
+						"type": "DatasetReference"
+					},
+					"name": "sepalsWithLengthLe55"
+				}
+			],
+			"transformations": [
+				{
+					"name": "isSepalLengthGt55"
+				}
+			],
+			"script": "source(output(\n\t\tColumn_1 as string,\n\t\tColumn_2 as string,\n\t\tColumn_3 as string,\n\t\tColumn_4 as string,\n\t\tColumn_5 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpreferredIntegralType: 'short',\n\tpreferredFractionalType: 'float') ~> Iris\nIris split(toFloat(Column_1) > 5.5,\n\tdisjoint: false) ~> isSepalLengthGt55@(isSepalLengthGt55, isSepalLengthLe55)\nisSepalLengthGt55@isSepalLengthGt55 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sepalsWithLengthGt55\nisSepalLengthGt55@isSepalLengthLe55 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sepalsWithLengthLe55"
+		}
+	}
+}

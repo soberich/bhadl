@@ -1,0 +1,21 @@
+{
+	"name": "iris_target",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "cloud shell blob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "iris"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
