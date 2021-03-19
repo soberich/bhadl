@@ -33,7 +33,7 @@
 					"name": "isSepalLengthGt55"
 				}
 			],
-			"script": "source(output(\n\t\tColumn_1 as string,\n\t\tColumn_2 as string,\n\t\tColumn_3 as string,\n\t\tColumn_4 as string,\n\t\tColumn_5 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpreferredIntegralType: 'short',\n\tpreferredFractionalType: 'float') ~> Iris\nIris split(toFloat(Column_1) > 5.5,\n\tdisjoint: false) ~> isSepalLengthGt55@(isSepalLengthGt55, isSepalLengthLe55)\nisSepalLengthGt55@isSepalLengthGt55 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sepalsWithLengthGt55\nisSepalLengthGt55@isSepalLengthLe55 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sepalsWithLengthLe55"
+			"script": "source(output(\n\t\t{sepal lengh} as float,\n\t\t{sepal width} as float,\n\t\tColumn_3 as string,\n\t\tColumn_4 as string,\n\t\tColumn_5 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpreferredIntegralType: 'short',\n\tpreferredFractionalType: 'float') ~> Iris\nIris split(toFloat({sepal lengh}) > 5.5,\n\tdisjoint: false) ~> isSepalLengthGt55@(isSepalLengthGt55, isSepalLengthLe55)\nisSepalLengthGt55@isSepalLengthGt55 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sepalsWithLengthGt55\nisSepalLengthGt55@isSepalLengthLe55 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sepalsWithLengthLe55"
 		}
 	}
 }
