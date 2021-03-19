@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "iris2.csv",
 				"container": "iris"
 			},
 			"columnDelimiter": ",",
