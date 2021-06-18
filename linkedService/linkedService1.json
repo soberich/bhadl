@@ -1,0 +1,17 @@
+{
+	"name": "linkedService1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "C:\\Users\\snazin\\OneDrive - Capgemini\\Desktop\\iris.csv",
+			"userId": "corp\\snazin",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiODRjZDNmMC1iMDgzLTQ4YjAtYWViNi05NWFjMzQzM2YyMTUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeSelfHosted",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
