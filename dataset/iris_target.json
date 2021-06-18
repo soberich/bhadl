@@ -2,15 +2,15 @@
 	"name": "iris_target",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "cloud shell blob",
+			"referenceName": "linkedService1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"container": "iris"
+				"type": "FileServerLocation",
+				"fileName": "iris_target.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
