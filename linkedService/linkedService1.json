@@ -5,9 +5,9 @@
 		"annotations": [],
 		"type": "FileServer",
 		"typeProperties": {
-			"host": "C:\\Users\\snazin\\OneDrive - Capgemini\\Desktop\\iris.csv",
+			"host": "C:\\Users\\snazin\\iris.csv",
 			"userId": "corp\\snazin",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiODRjZDNmMC1iMDgzLTQ4YjAtYWViNi05NWFjMzQzM2YyMTUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIxM2M0NzFmZi04YmQ5LTRiZTAtODM1Ny0wZTA2YWQyZjY4M2QiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntimeSelfHosted",
